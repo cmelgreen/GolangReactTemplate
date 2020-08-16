@@ -20,6 +20,7 @@ func main() {
 
 	router.GET("/", index)
 	router.GET("/dynamic", dynamic)
+	router.GET("/api", api)
 	router.ServeFiles("/static/*filepath", http.Dir("frontend/build/static"))
 
 	log.Fatal(http.ListenAndServe(":8080", router))
@@ -31,4 +32,8 @@ func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 func dynamic(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	tpl.ExecuteTemplate(w, "reactScript.html", nil)
+}
+
+func api(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	fmt.Fprint(w, "This was accessed via ../api")
 }
