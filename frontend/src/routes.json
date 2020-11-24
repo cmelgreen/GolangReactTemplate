@@ -1,0 +1,6 @@
+{
+  "routes": [
+    {"path":"/widget/:widgetId", "component": "WidgetContainer", "redirect": true},
+    {"path":"/", "component": "MainPageContainer", "exact": true}
+  ]
+}

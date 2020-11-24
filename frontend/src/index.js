@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import "./index.css"
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-function Component() {
-    const [data, setData] = useState("")
+import  ParseRoutes from "./Utils/ParseRoutes"
+import { routes } from "./routes.json"
 
-    const apiUrl = '../api';
-    fetch(apiUrl)
-      .then((response) => response.text())
-      .then((data) => setData(data));
+function AppContainer() {
+  const routeProps = ParseRoutes(routes)
+  
+  return (
+    <Router>
+     {routeProps.map((props, i) => (<Route key={i} {...props} /> ))}
+    </Router>
+  )
+}
 
-    return (
-      <React.Fragment>
-        <div id="loadedText">{data}</div>
-        <a href="/dynamic">Click to see dynamicly rendered script</a>
-      </React.Fragment>
-    ); 
-
-};
-
-var element = <Component />;
-
-ReactDOM.render(element, document.getElementById("root"))
+ReactDOM.render(<AppContainer />, document.getElementById("root"))
