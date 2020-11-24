@@ -7,10 +7,10 @@ import { routes } from "./routes.json"
 
 function AppContainer() {
   const routeProps = ParseRoutes(routes)
-  
+
   return (
     <Router>
-     {routeProps.map((props, i) => (<Route key={i} {...props} /> ))}
+     {routeProps.map((props, i) => <Route key={i} {...props} /> )}
     </Router>
   )
 }
