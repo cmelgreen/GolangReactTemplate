@@ -1,6 +1,6 @@
 import React from "react"
 
-import RedirectIfRequested from "../Utils/RedirectIfRequested.js"
+import RedirectIfRequested from "../Utils/RedirectRequested.js"
 
 export default function MainPageContainer(props) {
     const redirect = RedirectIfRequested()

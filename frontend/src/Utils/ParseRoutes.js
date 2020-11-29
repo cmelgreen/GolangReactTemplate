@@ -1,9 +1,11 @@
 import  MainPageContainer from "../Components/MainPage"
 import  WidgetContainer from "../Components/Widget"
+import EditorContainer from "../Components/Editor"
 
 const stringToComp = {
     MainPageContainer: MainPageContainer,
-    WidgetContainer: WidgetContainer
+    WidgetContainer: WidgetContainer,
+    EditorContainer: EditorContainer
 }
 
 const ParseRoutes = (routes) => (

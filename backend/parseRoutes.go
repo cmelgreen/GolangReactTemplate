@@ -44,4 +44,3 @@ func readJSONFile(file string) []byte {
 
 	return jsonBytes
 }
-

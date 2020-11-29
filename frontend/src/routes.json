@@ -1,6 +1,7 @@
 {
   "routes": [
     {"path":"/widget/:widgetId", "component": "WidgetContainer", "redirect": true},
-    {"path":"/", "component": "MainPageContainer", "exact": true}
+    {"path":"/", "component": "MainPageContainer", "redirecdt": false, "exact": true},
+    {"path":"/editor", "component": "EditorContainer", "redirect": true, "exact": true}
   ]
 }
